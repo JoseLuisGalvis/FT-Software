@@ -1,0 +1,186 @@
+/* style.css */
+
+/* Global Styles */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  background-color: #0d2740;
+  color: #fff !important;
+  z-index: 3;
+}
+
+.navbar-brand img {
+  height: 50px;
+}
+
+/* *****   Estilos Menu Hamburguesa   ***** */
+
+.navbar-toggler {
+  border-color: #ffffff !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* Estilos generales del carrusel */
+
+.slider-wrap {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  animation: slider-animation;
+  animation-duration: 36s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  background-size: cover;
+}
+
+#slide-1 {
+  background-image: url("/assets/images/analisis.jpg");
+}
+
+#slide-2 {
+  animation-delay: 6s; /*  6 segundos para cada imagen */
+  background-image: url("/assets/images/design.jpg");
+}
+
+#slide-3 {
+  animation-delay: 12s;
+  background-image: url("/assets/images/backend.jpg");
+}
+
+#slide-4 {
+  animation-delay: 18s;
+  background-image: url("/assets/images/testing.jpg");
+}
+
+#slide-5 {
+  animation-delay: 24s;
+  background-image: url("/assets/images/proyecto.jpg");
+}
+
+#slide-6 {
+  animation-delay: 30s;
+  background-image: url("/assets/images/clases.jpg");
+}
+
+/* Animación para cada imagen del carrusel */
+@keyframes slider-animation {
+  0%,
+  11.1% {
+    opacity: 1;
+  }
+  16.7%,
+  94.4% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Estilos del texto sobre el carrusel */
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  z-index: 2;
+  color: white;
+  text-align: left;
+  padding-top: 150px;
+}
+
+.text-overlay h1,
+.text-overlay h2 {
+  max-width: 600px;
+  margin: 0;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.text-overlay .btn {
+  margin-top: 20px;
+}
+
+#nosotros-text {
+  text-align: justify;
+}
+
+.modal-text {
+  text-align: justify;
+}
+
+/* Controles Carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 1; /* Asegúrate de que los controles sean visibles */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Cambia el color de fondo para mayor visibilidad */
+}
+/* Fin Controles Carrusel */
+
+#icon-ws {
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+}
+
+footer {
+  background-color: #0e233f;
+  color: #fff !important;
+}
+
+/* *****   Responsive   ***** */
+
+@media (max-width: 576px) {
+  .navbar-brand img {
+    height: 30px;
+  }
+
+  .navbar-brand h4 {
+    font-size: 0.8em;
+  }
+
+  .navbar-toggler {
+    padding: 0 !important;
+  }
+  .text-overlay {
+    left: 10%;
+  }
+
+  #nosotros-image {
+    width: 80%;
+    height: 75%;
+  }
+
+  #nosotros-text {
+    text-align: justify;
+  }
+}
