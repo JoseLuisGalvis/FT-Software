@@ -157,6 +157,19 @@ footer {
   color: #fff !important;
 }
 
+/* *****   RRSS   ***** */
+.text-icon {
+  color: #ffff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.text-icon:hover {
+  color: #0707f3;
+  text-shadow: 0 3px 6px rgba(255, 255, 255, 0.5);
+}
+
 /* *****   Responsive   ***** */
 
 @media (max-width: 576px) {
