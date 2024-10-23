@@ -19,6 +19,10 @@
       name="description"
       content="SFTI: Soluciones de software innovadoras para impulsar tu negocio. Descubre nuestros servicios personalizados."
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
     <!-- Bootstrap Correcto -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -29,54 +33,58 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light" id="home-nav">
-      <div class="container">
-        <a
-          class="navbar-brand d-flex align-items-center text-white fw-bold mx-1"
-          href="#"
-          ><img src="assets/images/logo.jpeg" alt="Logo SFTI" />
-          <h4>TechFuture Software</h4></a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#inicio"><h6>Inicio</h6></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#nosotros"
-                ><h6>Nosotros</h6></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#servicios"
-                ><h6>Servicios</h6></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#reviews"
-                ><h6>Reviews</h6></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#contacto"
-                ><h6>Contacto</h6></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light" id="home-nav">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center text-white fw-bold mx-1" href="#">
+      <img src="assets/images/logoTFS.png" alt="Logo SFTI" />
+      <h4>TechFuture Software</h4>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#home-nav">
+            <h6>Inicio</h6>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#nosotros">
+            <h6>Nosotros</h6>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#servicios">
+            <h6>Servicios</h6>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#reviews">
+            <h6>Reviews</h6>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#contacto">
+            <h6>Contacto</h6>
+          </a>
+        </li>
+      </ul>
+      <button id="darkModeToggle" class="toggle-button m-2" aria-label="Toggle dark mode">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
 
     <!-- Hero Carrusel automático de 6 imágenes  -->
     <section class="container w-100" id="home">
@@ -94,46 +102,72 @@
         <div class="col text-overlay">
           <h1>Soluciones de Software Innovadoras</h1>
           <h2>Impulsando tu Negocio con Tecnología de Vanguardia</h2>
-          <a href="#contacto" class="btn btn-primary mt-3">Contáctanos</a>
+          <a href="#contacto" class="btn btn-tech mt-3">Contáctanos</a>
         </div>
       </div>
     </section>
 
     <!-- Nosotros -->
-    <section id="nosotros" class="py-1 bg-light">
-      <div class="container">
-        <div class="row min-vh-100">
-          <div
-            class="col-12 col-md-6 mb-1 mb-md-0 d-flex justify-content-center align-items-center"
-            data-aos="fade-right"
-          >
-            <img
-              src="assets/images/logoTFS.jpeg"
-              alt="Logo TF Software"
-              class="img-fluid rounded"
-              id="nosotros-image"
-            />
-          </div>
-          <div
-            class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-start"
-            data-aos="fade-left"
-          >
-            <h2 class="mb-2">Sobre Nosotros</h2>
-            <p class="mb-2" id="nosotros-text">
-              TechFuture Software es una empresa líder en desarrollo de
-              software, comprometida con la innovación y la excelencia. Nuestro
-              equipo de expertos trabaja incansablemente para ofrecer soluciones
-              tecnológicas que impulsan el éxito de nuestros Clientes.
-            </p>
-            <a href="#home-nav" class="btn btn-primary">Ir al Inicio</a>
+<section
+id="nosotros"
+class="py-1 bg-light hidden"
+transition-style="in:circle:center"
+>
+<div class="container">
+  <div class="row min-vh-100">
+    <div
+      class="col-12 col-md-6 mb-1 mb-md-0 d-flex justify-content-center align-items-center"
+      data-aos="fade-right"
+    >
+      <div
+        class="d-flex flex-column align-items-center justify-content-center"
+        id="margarita"
+      >
+        <div
+          class="margarita d-flex align-items-center justify-content-center"
+        >
+          <div class="petal petal1"></div>
+          <div class="petal petal2"></div>
+          <div class="petal petal3"></div>
+          <div class="petal petal4"></div>
+          <div class="petal petal5"></div>
+          <div class="petal petal6"></div>
+          <div class="petal petal7"></div>
+          <div class="petal petal8"></div>
+
+          <div class="centro" id="centro">
+            <div class="second-center" id="second-center">
+              <div class="arco" id="arco"></div>
+            </div>
           </div>
         </div>
+        <h1 class="texto text-white mt-3">TechFuture</h1>
+        <h2 class="texto text-white mt-1">Software</h2>
       </div>
-    </section>
+    </div>
+    <div
+      class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-start"
+      data-aos="fade-left"
+    >
+      <h2 class="mb-2">Sobre Nosotros</h2>
+      <p class="mb-2" id="nosotros-text">
+        TechFuture Software es una empresa líder en desarrollo de
+        software, comprometida con la innovación y la excelencia. Nuestro
+        equipo de expertos trabaja incansablemente para ofrecer soluciones
+        tecnológicas que impulsan el éxito de nuestros Clientes.
+      </p>
+      <div class="text-center mt-4">
+        <a href="#home-nav" class="btn btn-tech">Ir al Inicio</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 
     <!-- Servicios -->
     <section id="servicios" class="py-1">
-      <div class="container">
+      <div class="container" >
         <h2 class="text-center mb-1" data-aos="fade-up">Nuestros Servicios</h2>
         <div class="row">
           <!-- Repetir este bloque 6 veces para los servicios -->
@@ -143,11 +177,12 @@
                 src="assets/images/design.jpg"
                 class="card-img-top"
                 alt="Desarrollo Web"
+                loading="lazy"
               />
               <div class="card-body">
                 <h3 class="card-title">Desarrollo Web</h3>
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-tech"
                   data-bs-toggle="modal"
                   data-bs-target="#modal1"
                 >
@@ -164,11 +199,12 @@
                 src="assets/images/backend.jpg"
                 class="card-img-top"
                 alt="Desarrollo Web"
+                loading="lazy"
               />
               <div class="card-body">
                 <h3 class="card-title">Software</h3>
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-tech"
                   data-bs-toggle="modal"
                   data-bs-target="#modal1"
                 >
@@ -185,11 +221,12 @@
                 src="assets/images/analisis.jpg"
                 class="card-img-top"
                 alt="Desarrollo Web"
+                loading="lazy"
               />
               <div class="card-body">
                 <h3 class="card-title">Análisis Funcional</h3>
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-tech"
                   data-bs-toggle="modal"
                   data-bs-target="#modal1"
                 >
@@ -206,11 +243,12 @@
                 src="assets/images/testing.jpg"
                 class="card-img-top"
                 alt="Desarrollo Web"
+                loading="lazy"
               />
               <div class="card-body">
                 <h3 class="card-title">Testing de Software</h3>
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-tech"
                   data-bs-toggle="modal"
                   data-bs-target="#modal1"
                 >
@@ -231,7 +269,7 @@
               <div class="card-body">
                 <h3 class="card-title">Consultoría Migraciones</h3>
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-tech"
                   data-bs-toggle="modal"
                   data-bs-target="#modal1"
                 >
@@ -250,9 +288,9 @@
                 alt="Desarrollo Web"
               />
               <div class="card-body">
-                <h3 class="card-title">Adiestramiento</h3>
+                <h3 class="card-title">Educación</h3>
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-tech"
                   data-bs-toggle="modal"
                   data-bs-target="#modal1"
                 >
@@ -262,9 +300,11 @@
             </div>
           </div>
           <!-- Fin del bloque de servicio -->
+          <div class="text-center mt-4">
+            <a href="#home-nav" class="btn btn-tech">Ir al Inicio</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     <!-- Modales de Servicios -->
     <div
@@ -277,7 +317,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modal1Label">Desarrollo Web</h5>
+            <h5 class="modal-title text-dark" id="modal1Label">Desarrollo de Software</h5>
             <button
               type="button"
               class="btn-close"
@@ -291,7 +331,7 @@
               alt="Desarrollo Web Detalle"
               class="img-fluid mb-3"
             />
-            <p class="modal-text">
+            <p class="modal-text text-dark">
               Ofrecemos Servicios personalizados de Desarrollo Web,
               Aplicaciones, utilizando las últimas tecnologías y mejores
               prácticas para crear sitios web atractivos, funcionales y
@@ -305,11 +345,15 @@
     </div>
 
     <!-- Reviews -->
-    <section id="reviews" class="py-1 bg-light">
+    <section
+    id="reviews"
+    class="py-1 bg-light hidden"
+    transition-style="in:circle:center"
+  >
       <div
         class="container min-vh-100 d-flex flex-column justify-content-center"
       >
-        <h2 class="text-center mt-3 mb-5" data-aos="fade-up">
+        <h2 class="text-center mt-3 mb-5 text-dark" data-aos="fade-up">
           Lo que dicen nuestros clientes
         </h2>
         <div
@@ -427,19 +471,22 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+        <div class="text-center mt-4">
+          <a href="#home-nav" class="btn btn-tech">Ir al Inicio</a>
+        </div>
       </div>
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="container py-1 parallax-section">
+    <section id="contacto" class="container py-1">
       <div class="row d-flex justify-content-center">
         <!-- Formulario de contacto -->
         <div class="col-lg-8 col-md-10 col-12">
           <form id="contactForm">
-            <div class="text-center mb-4">
-              <h1 class="display-4 fw-bold" data-aos="fade-right">
+            <div class="text-center mb-2">
+              <h4 class="display-4 fw-bold mt-2" data-aos="fade-right">
                 Contáctame
-              </h1>
+              </h4>
               <h4 class="" data-aos="fade-left">
                 ¡Me Encantaría Conocer tu Propuesta!
               </h4>
@@ -447,9 +494,7 @@
             <div class="row g-3" data-aos="fade-right">
               <div class="col-12">
                 <div class="form-group">
-                  <label for="inputName" class="text-white"
-                    >Nombre y Apellido</label
-                  >
+                  <label for="inputName">Nombre y Apellido</label>
                   <input
                     type="text"
                     id="inputName"
@@ -464,7 +509,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="inputEmail" class="text-white">Email</label>
+                  <label for="inputEmail">Email</label>
                   <input
                     type="email"
                     id="inputEmail"
@@ -477,7 +522,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="inputPhone" class="text-white">Teléfono</label>
+                  <label for="inputPhone">Teléfono</label>
                   <input
                     type="tel"
                     id="inputPhone"
@@ -491,7 +536,7 @@
               </div>
               <div class="col-12">
                 <div class="form-group">
-                  <label for="inputMessage" class="text-white">Mensaje</label>
+                  <label for="inputMessage">Mensaje</label>
                   <textarea
                     id="inputMessage"
                     name="mensaje"
@@ -503,11 +548,11 @@
                 </div>
               </div>
               <div
-                class="col-12 d-flex justify-content-between align-items-center mt-3"
+                class="col-12 d-flex justify-content-between align-items-center mt-1"
               >
                 <button
                   type="submit"
-                  class="btn btn-primary mt-3 btn-proyectos"
+                  class="btn btn-tech mt-3 btn-proyectos"
                 >
                   Enviar Mensaje
                 </button>
@@ -530,89 +575,90 @@
           <!-- Fin Formulario de contacto -->
           <a
             href="#home-nav"
-            class="btn btn-primary mt-3 btn-proyectos text-center"
+            class="btn btn-tech mt-3 btn-proyectos text-center"
             >Ir al Inicio</a
           >
         </div>
       </div>
+      
     </section>
+<!-- Footer -->
+<footer class="mt-1 pb-2">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="footer_logo">
+          <a href="#" class="d-flex align-items-center">
+            <img
+              src="assets/images/logoTFS.png"
+              alt="logo"
+              class="me-2"
+              style="width: 110px; height: 110px"
+            />
+          </a>
+          <p>Agregando Valor a tu Empresa.</p>
+        </div>
 
-    <!-- Footer -->
-    <footer class="mt-1 pb-2">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4 mb-3 mb-md-0">
-            <div class="footer_logo">
-              <a href="#" class="d-flex align-items-center">
-                <img
-                  src="assets/images/logoTFS.jpeg"
-                  alt="logo"
-                  class="me-2"
-                  style="width: 110px; height: 110px"
-                />
-              </a>
-              <p>Agregando Valor a tu Empresa.</p>
-            </div>
-
-            <ul class="list-unstyled d-flex">
-              <li class="me-2">
-                <a
-                  href="https://www.instagram.com/techfuturesoftware/"
-                  class="text-icon"
-                  ><i class="ri-instagram-fill fa-2x"></i
-                ></a>
-              </li>
-              <li class="me-2">
-                <a
-                  href="https://www.facebook.com/profile.php?id=100046965497737"
-                  class="text-icon"
-                  ><i class="ri-facebook-fill"></i
-                ></a>
-              </li>
-              <li class="me-2">
-                <a href="https://x.com/JosegalvisDip" class="text-icon"
-                  ><i class="ri-twitter-fill"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/jos%C3%A9-luis-galvis-escobar-1344821a2/"
-                  class="text-icon"
-                  ><i class="ri-linkedin-fill"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 mb-3 mb-md-0">
-            <h4>Mapa</h4>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13138.566325268608!2d-58.38310044999999!3d-34.5879346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1691335417320!5m2!1ses!2sar"
-              class="w-100"
-              height="220"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-          <div class="col-md-4">
-            <h4>Contacto</h4>
-            <div>
-              <i class="fa fa-home fs-5"></i>
-              <p class="d-inline-block ms-2">Ubicación:</p>
-              <p class="d-inline-block ms-1">PBA - Argentina</p>
-              <br />
-              <i class="fa fa-envelope fs-5"></i>
-              <p class="d-inline-block ms-2">Correo Electrónico:</p>
-              <p class="d-inline-block ms-1">techfuturesoftware24@gmail.com</p>
-            </div>
-          </div>
+        <ul class="list-unstyled d-flex">
+          <li class="me-2">
+            <a
+              href="https://www.instagram.com/techfuturesoftware/"
+              class="text-icon"
+              ><i class="ri-instagram-fill"></i
+            ></a>
+          </li>
+          <li class="me-2">
+            <a
+              href="https://www.facebook.com/profile.php?id=100046965497737"
+              class="text-icon"
+              ><i class="ri-facebook-fill"></i
+            ></a>
+          </li>
+          <li class="me-2">
+            <a href="https://x.com/JosegalvisDip" class="text-icon"
+              ><i class="ri-twitter-fill"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/jos%C3%A9-luis-galvis-escobar-1344821a2/"
+              class="text-icon"
+              ><i class="ri-linkedin-fill"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h4 class="mt-3">Mapa</h4>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13138.566325268608!2d-58.38310044999999!3d-34.5879346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1691335417320!5m2!1ses!2sar"
+          class="w-100"
+          height="220"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="col-md-4">
+        <h4 class="mt-3">Contacto</h4>
+        <div>
+          <i class="fa fa-home fs-5"></i>
+          <p class="d-inline-block ms-2">Ubicación:</p>
+          <p class="d-inline-block ms-1">PBA - Argentina</p>
+          <br />
+          <i class="fa fa-envelope fs-5"></i>
+          <p class="d-inline-block ms-2">Correo Electrónico:</p>
+          <p class="d-inline-block ms-1">techfuturesoftware24@gmail.com</p>
         </div>
       </div>
-      <div class="text-white text-center py-2">
-        Copyright © 2024 TechFuture Software. Todos los Derechos Reservados.
-      </div>
-    </footer>
+    </div>
+  </div>
+  <div class="text-white text-center py-2">
+    Copyright © 2024 TechFuture Software. Todos los Derechos Reservados.
+  </div>
+</footer>
+    
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -620,9 +666,73 @@
     </script>
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+
+      // Cierre del Menu Hamburguesa
+      document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        const navbarCollapse = document.querySelector('#navbarNav');
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+
+        navLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            // Cierra el menú al hacer clic en cualquier enlace
+            bsCollapse.hide();
+
+            // Obtiene el id del destino desde el href
+            const targetId = link.getAttribute('href');
+
+            // Espera a que el menú se cierre y luego hace scroll suave al destino
+            setTimeout(() => {
+              const targetElement = document.querySelector(targetId);
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 250); // Ajusta el tiempo si es necesario
+          });
+        });
+      });
+
+
+    // Dark Mode
+    document.addEventListener('DOMContentLoaded', function() {
+      // Función para aplicar o quitar el modo oscuro
+      const toggleDarkMode = () => {
+          const body = document.body;
+          const navbar = document.querySelector('.navbar');
+          const toggleButton = document.getElementById('darkModeToggle');
+  
+          if (body.classList.toggle("dark-mode")) {
+              navbar.classList.add("dark-mode");
+              toggleButton.innerHTML = '<i class="fas fa-moon"></i>'; 
+              localStorage.setItem("darkMode", "enabled");
+          } else {
+              navbar.classList.remove("dark-mode");
+              toggleButton.innerHTML = '<i class="fas fa-sun"></i>'; 
+              localStorage.setItem("darkMode", "disabled");
+          }
+      };
+  
+      // Comprobar el estado del modo oscuro en el localStorage
+      const darkMode = localStorage.getItem("darkMode") === "enabled";
+      if (darkMode) {
+          toggleDarkMode(); // Aplicar el modo oscuro si está habilitado
+      }
+  
+      // Añadir evento al botón de modo oscuro
+      document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+  });
+  
+    
+    </script>
+    
+
     <!-- Incluir el script de EmailJS -->
     <script
       type="text/javascript"
@@ -660,18 +770,6 @@
           );
         });
     </script>
-    <script>
-      document.addEventListener("contextmenu", function (event) {
-        event.preventDefault();
-      });
-
-      document.addEventListener("keydown", function (event) {
-        if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
-          event.preventDefault();
-        }
-      });
-    </script>
-
     <script src="/public/js/main.js"></script>
   </body>
 </html>

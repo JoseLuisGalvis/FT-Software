@@ -13,14 +13,30 @@ body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
+.btn-tech {
+  background-color: #0d2740;
+  color: #fff !important;
+  z-index: 5 !important;
+}
+
+#nosotros,
+#servicios {
+  min-height: 100vh; /* Asegúrate de que ocupen toda la altura */
+  overflow: auto; /* Permite el desplazamiento si es necesario */
+}
+
 .navbar {
   background-color: #0d2740;
   color: #fff !important;
   z-index: 3;
 }
 
+.navbar-brand {
+  padding: 0;
+}
+
 .navbar-brand img {
-  height: 50px;
+  height: 80px;
 }
 
 /* *****   Estilos Menu Hamburguesa   ***** */
@@ -33,6 +49,150 @@ body {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
+/* Dark Mode */
+
+.toggle-button {
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor a puntero */
+  color: white; /* Color del ícono */
+  font-size: 1.5rem; /* Tamaño del ícono */
+  transition: color 0.3s ease; /* Efecto de transición */
+}
+
+.toggle-button:hover {
+  color: #75c354; /* Color al pasar el mouse */
+}
+
+.toggle-button:focus {
+  outline: none; /* Eliminar el contorno al hacer clic */
+}
+/* Dark Mode Base */
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+/* Secciones en modo oscuro */
+body.dark-mode #nosotros,
+body.dark-mode #reviews {
+  background-color: #333 !important; /* Sobreescribe bg-light */
+  color: white;
+}
+
+body.dark-mode .margarita {
+  background-color: #333;
+}
+
+body.dark-mode #margarita {
+  background-color: #333;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+}
+
+/* Ajustes para cards en reviews */
+body.dark-mode .card {
+  background-color: #444;
+  color: white;
+}
+
+body.dark-mode .card-text,
+body.dark-mode .card-title {
+  color: white;
+}
+
+/* Transición del círculo para ambas secciones */
+@keyframes circle-in-center {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(125%);
+  }
+}
+
+[transition-style="in:circle:center"] {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Versión modo claro del círculo */
+body:not(.dark-mode) [transition-style="in:circle:center"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(139, 195, 74, 0.4);
+  z-index: -1;
+  clip-path: circle(0%);
+}
+
+/* Versión modo oscuro del círculo */
+body.dark-mode [transition-style="in:circle:center"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Círculo blanco con opacidad 0.1 */
+  z-index: -1;
+  clip-path: circle(0%);
+}
+
+/* Animación del círculo */
+.animate-circle::before {
+  animation: circle-in-center 60s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+  animation-delay: 3s;
+}
+
+/* Clases de visibilidad */
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+/* Ajustes específicos para textos en modo oscuro  #484848 */
+body.dark-mode #nosotros h2,
+body.dark-mode #reviews h2,
+body.dark-mode #nosotros p,
+body.dark-mode #reviews p {
+  color: white !important;
+}
+
+/* Ajustes para los controles del carrusel en modo oscuro */
+body.dark-mode .carousel-control-prev-icon,
+body.dark-mode .carousel-control-next-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Asegurar que los botones de navegación sean visibles en modo oscuro */
+body.dark-mode .carousel-control-prev,
+body.dark-mode .carousel-control-next {
+  opacity: 0.8;
+}
+
+.dark-mode .navbar,
+.dark-mode footer {
+  background-color: #333;
+}
+
+.dark-mode .btn-tech {
+  background-color: #333;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+}
+
+/* Fin Dark Mode */
 /* Estilos generales del carrusel */
 
 .slider-wrap {
@@ -131,6 +291,9 @@ body {
 }
 
 /* Controles Carrusel */
+.carousel-item .card {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
@@ -148,9 +311,238 @@ body {
 }
 /* Fin Controles Carrusel */
 
+/* Margarita */
+.margarita {
+  position: relative;
+  width: 270px; /* Flower size */
+  height: 270px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #0f1e3e;
+  overflow: hidden; /* Prevent scrolling when zooming */
+  display: block;
+}
+
+/*  ***   nosotros   *** */
+#margarita {
+  width: 400px;
+  height: 400px;
+  background-color: #0f1e3e;
+  border-radius: 2em 3em 4em 5em;
+}
+
+.centro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #03a9f4; /* Light blue */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.second-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0f1e3e;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+.arco {
+  width: 20px;
+  height: 5px;
+  position: absolute;
+  top: 18%;
+  left: 20%;
+  background-color: #ffff;
+  z-index: 2;
+  transform: rotate(318deg);
+}
+
+.petal {
+  position: absolute;
+  width: 35px; /* Petal width */
+  height: 35px;
+  background-color: #8bc34a; /* Light green */
+}
+
+/* Petal positions */
+.petal1 {
+  top: 3%;
+  left: 45%;
+  border-radius: 0.3em 0.3em 0 0;
+}
+.petal2 {
+  top: 15%;
+  left: 73%;
+  border-radius: 0.3em 0.3em 0 0;
+  transform: rotate(45deg);
+}
+.petal3 {
+  top: 45%;
+  left: 84%;
+  border-radius: 0 0.3em 0.3em 0;
+}
+.petal4 {
+  top: 72%;
+  left: 73%;
+  border-radius: 0 0.3em 0.3em 0;
+  transform: rotate(45deg);
+}
+.petal5 {
+  top: 84%;
+  left: 45%;
+  border-radius: 0 0 0.3em 0.3em;
+}
+.petal6 {
+  top: 72%;
+  left: 14%;
+  border-radius: 0 0 0.3em 0.3em;
+  transform: rotate(45deg);
+}
+.petal7 {
+  top: 45%;
+  left: 3%;
+  border-radius: 0.3em 0 0 0.3em;
+}
+.petal8 {
+  top: 15%;
+  left: 15%;
+  border-radius: 0.3em 0 0 0.3em;
+  transform: rotate(45deg);
+}
+
+/* Fin Margarita */
+
+/* * *****   Transition.style en nosotros   ***** * */
+@keyframes circle-in-center {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(125%);
+  }
+}
+
+[transition-style="in:circle:center"] {
+  position: relative;
+  overflow: hidden;
+}
+
+[transition-style="in:circle:center"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(139, 195, 74);
+  z-index: -1;
+  clip-path: circle(0%); /* Iniciamos con el círculo cerrado */
+}
+
+/* Clase para activar la animación con delay */
+.animate-circle::before {
+  animation: circle-in-center 60s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+  animation-delay: 3s; /* Añadimos el delay de 3 segundos */
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+/* Ajustes de posición para las secciones */
+#nosotros,
+#reviews {
+  position: relative;
+  z-index: 1;
+}
+
+body.dark-mode #nosotros {
+  background-color: rgb(250, 249, 247, 0.1);
+  place-content: center;
+  z-index: 1;
+}
+
+body.dark-mode #review {
+  background-color: rgb(250, 249, 247, 0.1);
+  place-content: center;
+  z-index: -1;
+}
+
+/* * *****   Fin Transition.style en About   ***** * */
+
 #icon-ws {
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
 }
+
+/* Servicios */
+/* Estilo para las cards de servicios */
+#servicios .card {
+  height: 100%; /* Asegura que todas las cards tengan la misma altura */
+  display: flex;
+  flex-direction: column;
+}
+
+#servicios .card-img-top {
+  height: 200px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Mantiene la proporción de la imagen sin distorsión */
+  width: 100%;
+}
+
+#servicios .card-body {
+  flex: 1; /* Hace que el card-body ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem; /* Padding consistente */
+}
+
+#servicios .card-title {
+  font-size: 1.25rem; /* Tamaño de fuente consistente */
+  margin-bottom: 1rem; /* Espacio consistente debajo del título */
+  min-height: 3rem; /* Altura mínima para títulos de dos líneas */
+  display: flex;
+  align-items: center; /* Centra verticalmente el texto */
+}
+
+#servicios .btn-tech {
+  margin-top: auto; /* Empuja el botón hacia abajo */
+}
+
+/* Asegura que todas las cards en la misma fila tengan la misma altura */
+#servicios .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#servicios .col-md-4 {
+  display: flex;
+  margin-bottom: 1.5rem; /* Espacio consistente entre filas */
+}
+
+/* Fin Servicios */
+
+/* Contacto */
+input,
+textarea {
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/**/
 
 footer {
   background-color: #0e233f;
@@ -166,15 +558,15 @@ footer {
 }
 
 .text-icon:hover {
-  color: #0707f3;
-  text-shadow: 0 3px 6px rgba(255, 255, 255, 0.5);
+  color: rgb(139, 195, 74);
+  text-shadow: 0 6px 12px rgba(255, 255, 255, 0.5);
 }
 
 /* *****   Responsive   ***** */
 
 @media (max-width: 576px) {
   .navbar-brand img {
-    height: 30px;
+    height: 50px;
   }
 
   .navbar-brand h4 {
@@ -188,12 +580,79 @@ footer {
     left: 10%;
   }
 
-  #nosotros-image {
-    width: 80%;
-    height: 75%;
-  }
-
   #nosotros-text {
     text-align: justify;
   }
+
+  /*  ***   nosotros   *** */
+  /* Margarita */
+  .margarita {
+    width: 200px; /* Ajusta el tamaño de la margarita */
+    height: 200px;
+  }
+
+  #margarita {
+    width: 300px; /* Ajusta el tamaño del contenedor */
+    height: 300px;
+  }
+
+  .centro {
+    width: 100px; /* Ajusta el tamaño del centro */
+    height: 100px;
+  }
+
+  .second-center {
+    width: 80px; /* Ajusta el tamaño del segundo centro */
+    height: 80px;
+  }
+
+  .arco {
+    width: 15px; /* Ajusta el tamaño del arco */
+    height: 4px;
+  }
+
+  .petal {
+    width: 25px; /* Ajusta el tamaño de los pétalos */
+    height: 25px;
+  }
+
+  /* Posiciones de los pétalos */
+  .petal1 {
+    top: 7%;
+    left: 43%;
+  }
+  .petal2 {
+    top: 17%;
+    left: 69%;
+    transform: rotate(45deg);
+  }
+  .petal3 {
+    top: 45%;
+    left: 80%;
+  }
+  .petal4 {
+    top: 70%;
+    left: 70%;
+    transform: rotate(45deg);
+  }
+  .petal5 {
+    top: 80%;
+    left: 43%;
+  }
+  .petal6 {
+    top: 70%;
+    left: 17%;
+    transform: rotate(45deg);
+  }
+  .petal7 {
+    top: 45%;
+    left: 8%;
+  }
+  .petal8 {
+    top: 17%;
+    left: 17%;
+    transform: rotate(45deg);
+  }
+
+  /* Fin Margarita */
 }
