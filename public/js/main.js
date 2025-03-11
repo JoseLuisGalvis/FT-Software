@@ -1,92 +1,85 @@
-// js/main.js:
-document.addEventListener("contextmenu", function (event) {
-  event.preventDefault();
-});
+// js/main.js
 
-document.addEventListener("keydown", function (event) {
-  if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
-    event.preventDefault();
-  }
-});
+document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("contextmenu", (event) => event.preventDefault());
 
-document.addEventListener("DOMContentLoaded", function () {
-  const nosotrosSection = document.getElementById("nosotros");
-  const reviewsSection = document.getElementById("reviews");
-  let animationTriggered = false;
-
-  function checkScroll() {
-    if (animationTriggered) return;
-
-    const rect = nosotrosSection.getBoundingClientRect();
-    const triggerPoint = window.innerHeight * 0.8; // Dispara cuando el 80% de la sección es visible
-
-    if (rect.top <= triggerPoint) {
-      nosotrosSection.classList.add("animate-circle", "visible");
-      nosotrosSection.classList.remove("hidden");
-      animationTriggered = true;
-      reviewsSection.classList.add("animate-circle", "visible");
-      reviewsSection.classList.remove("hidden");
-      animationTriggered = true;
+  document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+      event.preventDefault();
     }
-  }
+  });
 
-  // Verificar en el scroll
-  window.addEventListener("scroll", checkScroll);
-  // Verificar también al cargar la página en caso de que la sección ya esté visible
-  checkScroll();
+  // === Cierre del Menú Hamburguesa ===
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  const navbarCollapse = document.querySelector("#navbarNav");
+  const bsCollapse = navbarCollapse
+    ? new bootstrap.Collapse(navbarCollapse, { toggle: false })
+    : null;
 
-  // El resto de tu código GSAP permanece igual
-  gsap.registerPlugin(ScrollTrigger);
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (bsCollapse) bsCollapse.hide();
+      const targetId = link.getAttribute("href");
+      setTimeout(() => {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) targetElement.scrollIntoView({ behavior: "smooth" });
+      }, 250);
+    });
+  });
 
-  gsap.set("#centro", { scale: 0, opacity: 0 });
-  gsap.set("#second-center", { scale: 0, opacity: 0 });
-  gsap.set("#arco", { scale: 0, opacity: 0 });
-  gsap.set(".petal", { scale: 0, opacity: 0 });
-  gsap.set(".texto", { scale: 0, opacity: 0 });
+  // === Dark Mode ===
+  const toggleDarkMode = () => {
+    const body = document.body;
+    const navbar = document.querySelector(".navbar");
+    const toggleButton = document.getElementById("darkModeToggle");
+    const darkMode = localStorage.getItem("darkMode") === "enabled";
 
-  ScrollTrigger.create({
-    trigger: "#margarita",
-    start: "top center",
-    toggleActions: "play none none reset",
-    onEnter: () => {
-      gsap.to("#centro", {
-        duration: 0.5,
-        scale: 1,
-        opacity: 1,
-        delay: 0.5,
-        onComplete: () => {
-          gsap.to("#second-center", {
-            duration: 1,
-            scale: 1,
-            opacity: 1,
-            delay: 0.5,
-            onComplete: () => {
-              gsap.to("#arco", {
-                duration: 1.5,
-                scale: 1,
-                opacity: 1,
-                delay: 0.5,
-                onComplete: () => {
-                  gsap.to(".petal", {
-                    duration: 2,
-                    scale: 1,
-                    opacity: 1,
-                    delay: 0.5,
-                    onComplete: () => {
-                      gsap.to(".texto", {
-                        duration: 2.5,
-                        scale: 1,
-                        opacity: 1,
-                        delay: 0.5,
-                      });
-                    },
-                  });
-                },
-              });
-            },
-          });
-        },
-      });
-    },
+    if (darkMode) {
+      body.classList.add("dark-mode");
+      navbar.classList.add("dark-mode");
+      toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
+    } else {
+      body.classList.remove("dark-mode");
+      navbar.classList.remove("dark-mode");
+      toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+  };
+
+  toggleDarkMode(); // Aplicar al cargar
+  document.getElementById("darkModeToggle").addEventListener("click", () => {
+    const body = document.body;
+    const navbar = document.querySelector(".navbar");
+    const toggleButton = document.getElementById("darkModeToggle");
+
+    if (body.classList.contains("dark-mode")) {
+      body.classList.remove("dark-mode");
+      navbar.classList.remove("dark-mode");
+      toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+      localStorage.setItem("darkMode", "disabled");
+    } else {
+      body.classList.add("dark-mode");
+      navbar.classList.add("dark-mode");
+      toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
+      localStorage.setItem("darkMode", "enabled");
+    }
+  });
+
+  // === Configuración de EmailJS ===
+  emailjs.init("ZFNa8J5Ckf-Cv-kv1");
+  document.getElementById("contactForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    emailjs.sendForm("service_hc1g5ck", "template_omfi5rs", form).then(
+      () => {
+        console.log("Mensaje Enviado con Éxito!");
+        alert("Mensaje Enviado con Éxito");
+        form.reset();
+      },
+      (error) => {
+        console.log("Error al Enviar el Mensaje", error);
+        alert("Error al Enviar el Mensaje");
+      }
+    );
   });
 });

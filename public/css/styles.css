@@ -1,197 +1,156 @@
-/* styles.css */
+/* Fuente y estilos base */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+:root {
+  --primary-color: #0d2740;
+  --secondary-color: #8bc34a;
+  --dark-bg: #333;
+  --light-bg: #fff;
+  --text-light: #fff;
+  --text-dark: #333;
+}
 
 body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
   padding: 0;
+  color: var(--text-dark);
+  background-color: var(--light-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Botones */
 .btn {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .btn-tech {
-  background-color: #0d2740;
-  color: #fff !important;
-  z-index: 5 !important;
+  background-color: var(--primary-color);
+  color: var(--text-light) !important;
+  z-index: 5;
 }
 
-#nosotros,
-#servicios {
-  min-height: 100vh; /* Asegúrate de que ocupen toda la altura */
-  overflow: auto; /* Permite el desplazamiento si es necesario */
-}
-
+/* Navbar */
 .navbar {
-  background-color: #0d2740;
-  color: #fff !important;
+  background-color: var(--primary-color);
+  color: var(--text-light);
   z-index: 3;
 }
 
 .navbar-brand {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .navbar-brand img {
-  height: 80px;
+  height: 70px;
 }
 
-/* *****   Estilos Menu Hamburguesa   ***** */
+/* Estilos para los enlaces del menú */
+.navbar-nav .nav-link {
+  color: white;
+  font-weight: normal;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+/* Efecto hover */
+.navbar-nav .nav-link:hover {
+  color: #00bfff !important;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
+  background-color: rgba(0, 191, 255, 0.1);
+  transform: scale(1.09);
+}
 
 .navbar-toggler {
-  border-color: #ffffff !important;
+  border-color: var(--text-light) !important;
 }
 
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
+.nosotros img {
+  border-radius: 0.5em;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.text-paragraph {
+  text-align: justify;
+}
+
+/* Servicios */
+.card-service {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-service:hover {
+  transform: translateY(-10px); /* Elevación en el eje Y */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
 /* Dark Mode */
-
-.toggle-button {
-  background-color: transparent; /* Fondo transparente */
-  border: none; /* Sin borde */
-  cursor: pointer; /* Cambia el cursor a puntero */
-  color: white; /* Color del ícono */
-  font-size: 1.5rem; /* Tamaño del ícono */
-  transition: color 0.3s ease; /* Efecto de transición */
-}
-
-.toggle-button:hover {
-  color: #75c354; /* Color al pasar el mouse */
-}
-
-.toggle-button:focus {
-  outline: none; /* Eliminar el contorno al hacer clic */
-}
-/* Dark Mode Base */
 body.dark-mode {
-  background-color: #333;
-  color: white;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
 }
 
-/* Secciones en modo oscuro */
-body.dark-mode #nosotros,
-body.dark-mode #reviews {
-  background-color: #333 !important; /* Sobreescribe bg-light */
-  color: white;
+body.dark-mode .navbar-brand img,
+body.dark-mode .footer_logo img {
+  border-radius: 0.25em;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+  margin-right: 0.5em;
 }
 
-body.dark-mode .margarita {
-  background-color: #333;
+body.dark-mode .navbar,
+body.dark-mode .nosotros,
+body.dark-mode .reviews,
+body.dark-mode footer {
+  background-color: var(--dark-bg) !important;
 }
 
-body.dark-mode #margarita {
-  background-color: #333;
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+body.dark-mode .reviews h2 {
+  color: var(--text-light) !important;
 }
 
-/* Ajustes para cards en reviews */
-body.dark-mode .card {
-  background-color: #444;
-  color: white;
-}
-
-body.dark-mode .card-text,
-body.dark-mode .card-title {
-  color: white;
-}
-
-/* Transición del círculo para ambas secciones */
-@keyframes circle-in-center {
-  from {
-    clip-path: circle(0%);
-  }
-  to {
-    clip-path: circle(125%);
-  }
-}
-
-[transition-style="in:circle:center"] {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Versión modo claro del círculo */
-body:not(.dark-mode) [transition-style="in:circle:center"]::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(139, 195, 74, 0.4);
-  z-index: -1;
-  clip-path: circle(0%);
-}
-
-/* Versión modo oscuro del círculo */
-body.dark-mode [transition-style="in:circle:center"]::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Círculo blanco con opacidad 0.1 */
-  z-index: -1;
-  clip-path: circle(0%);
-}
-
-/* Animación del círculo */
-.animate-circle::before {
-  animation: circle-in-center 60s cubic-bezier(0.25, 1, 0.3, 1) forwards;
-  animation-delay: 3s;
-}
-
-/* Clases de visibilidad */
-.hidden {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.visible {
-  opacity: 1;
-}
-
-/* Ajustes específicos para textos en modo oscuro  #484848 */
-body.dark-mode #nosotros h2,
-body.dark-mode #reviews h2,
-body.dark-mode #nosotros p,
-body.dark-mode #reviews p {
-  color: white !important;
-}
-
-/* Ajustes para los controles del carrusel en modo oscuro */
-body.dark-mode .carousel-control-prev-icon,
-body.dark-mode .carousel-control-next-icon {
-  filter: brightness(0) invert(1);
-}
-
-/* Asegurar que los botones de navegación sean visibles en modo oscuro */
-body.dark-mode .carousel-control-prev,
-body.dark-mode .carousel-control-next {
-  opacity: 0.8;
-}
-
-.dark-mode .navbar,
-.dark-mode footer {
-  background-color: #333;
-}
-
-.dark-mode .btn-tech {
-  background-color: #333;
+body.dark-mode .nosotros img {
+  border-radius: 0.25em;
   box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
 }
 
-/* Fin Dark Mode */
-/* Estilos generales del carrusel */
+.card-service:hover {
+  transform: translateY(-10px); /* Elevación en el eje Y */
+  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.2); /* Sombra más pronunciada */
+}
 
+body.dark-mode .btn-tech {
+  background-color: var(--dark-bg);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+}
+
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.toggle-button:hover {
+  color: var(--secondary-color);
+}
+
+/* Secciones */
+#nosotros,
+#servicios {
+  min-height: 100vh;
+  overflow: auto;
+}
+
+/* Carrusel */
 .slider-wrap {
   width: 100%;
   height: 100vh;
@@ -206,43 +165,34 @@ body.dark-mode .carousel-control-next {
   height: 100%;
   position: absolute;
   opacity: 0;
-  animation: slider-animation;
-  animation-duration: 36s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation: slider-animation 36s infinite ease-in-out;
   background-size: cover;
 }
 
 #slide-1 {
   background-image: url("/assets/images/analisis.webp");
 }
-
 #slide-2 {
-  animation-delay: 6s; /*  6 segundos para cada imagen */
+  animation-delay: 6s;
   background-image: url("/assets/images/design.webp");
 }
-
 #slide-3 {
   animation-delay: 12s;
   background-image: url("/assets/images/backend.webp");
 }
-
 #slide-4 {
   animation-delay: 18s;
   background-image: url("/assets/images/testing.webp");
 }
-
 #slide-5 {
   animation-delay: 24s;
   background-image: url("/assets/images/proyecto.webp");
 }
-
 #slide-6 {
   animation-delay: 30s;
   background-image: url("/assets/images/clases.webp");
 }
 
-/* Animación para cada imagen del carrusel */
 @keyframes slider-animation {
   0%,
   11.1% {
@@ -257,13 +207,12 @@ body.dark-mode .carousel-control-next {
   }
 }
 
-/* Estilos del texto sobre el carrusel */
 .text-overlay {
   position: absolute;
   top: 0;
   left: 15%;
   z-index: 2;
-  color: white;
+  color: var(--text-light);
   text-align: left;
   padding-top: 150px;
 }
@@ -272,153 +221,24 @@ body.dark-mode .carousel-control-next {
 .text-overlay h2 {
   max-width: 600px;
   margin: 0;
-  text-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.5),
-    0 3px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.5);
 }
 
-.text-overlay .btn {
-  margin-top: 20px;
-}
-
-#nosotros-text {
-  text-align: justify;
-}
-
-.modal-text {
-  text-align: justify;
-}
-
-/* Controles Carrusel */
-.carousel-item .card {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-}
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%;
-  opacity: 1; /* Asegúrate de que los controles sean visibles */
-}
-
+/* Cambiar el color de los iconos del carrusel a negro en modo claro */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Cambia el color de fondo para mayor visibilidad */
-}
-/* Fin Controles Carrusel */
-
-/* Margarita */
-.margarita {
-  position: relative;
-  width: 270px; /* Flower size */
-  height: 270px;
-  margin: 0 auto;
-  border-radius: 50%;
-  background-color: #0f1e3e;
-  overflow: hidden; /* Prevent scrolling when zooming */
-  display: block;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(288deg)
+    brightness(103%) contrast(103%);
 }
 
-/*  ***   nosotros   *** */
-#margarita {
-  width: 400px;
-  height: 400px;
-  background-color: #0f1e3e;
-  border-radius: 2em 3em 4em 5em;
+/* Iconos del carrusel en modo oscuro */
+body.dark-mode .carousel-control-prev-icon,
+body.dark-mode .carousel-control-next-icon {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%)
+    contrast(100%);
 }
 
-.centro {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #03a9f4; /* Light blue */
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-
-.second-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #0f1e3e;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-}
-
-.arco {
-  width: 20px;
-  height: 5px;
-  position: absolute;
-  top: 18%;
-  left: 20%;
-  background-color: #ffff;
-  z-index: 2;
-  transform: rotate(318deg);
-}
-
-.petal {
-  position: absolute;
-  width: 35px; /* Petal width */
-  height: 35px;
-  background-color: #8bc34a; /* Light green */
-}
-
-/* Petal positions */
-.petal1 {
-  top: 3%;
-  left: 45%;
-  border-radius: 0.3em 0.3em 0 0;
-}
-.petal2 {
-  top: 15%;
-  left: 73%;
-  border-radius: 0.3em 0.3em 0 0;
-  transform: rotate(45deg);
-}
-.petal3 {
-  top: 45%;
-  left: 84%;
-  border-radius: 0 0.3em 0.3em 0;
-}
-.petal4 {
-  top: 72%;
-  left: 73%;
-  border-radius: 0 0.3em 0.3em 0;
-  transform: rotate(45deg);
-}
-.petal5 {
-  top: 84%;
-  left: 45%;
-  border-radius: 0 0 0.3em 0.3em;
-}
-.petal6 {
-  top: 72%;
-  left: 14%;
-  border-radius: 0 0 0.3em 0.3em;
-  transform: rotate(45deg);
-}
-.petal7 {
-  top: 45%;
-  left: 3%;
-  border-radius: 0.3em 0 0 0.3em;
-}
-.petal8 {
-  top: 15%;
-  left: 15%;
-  border-radius: 0.3em 0 0 0.3em;
-  transform: rotate(45deg);
-}
-
-/* Fin Margarita */
-
-/* * *****   Transition.style en nosotros   ***** * */
+/* Animaciones */
 @keyframes circle-in-center {
   from {
     clip-path: circle(0%);
@@ -440,107 +260,20 @@ body.dark-mode .carousel-control-next {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(139, 195, 74);
+  background-color: rgba(139, 195, 74, 0.4);
   z-index: -1;
-  clip-path: circle(0%); /* Iniciamos con el círculo cerrado */
+  clip-path: circle(0%);
 }
 
-/* Clase para activar la animación con delay */
 .animate-circle::before {
   animation: circle-in-center 60s cubic-bezier(0.25, 1, 0.3, 1) forwards;
-  animation-delay: 3s; /* Añadimos el delay de 3 segundos */
+  animation-delay: 3s;
 }
-
-.hidden {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.visible {
-  opacity: 1;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-/* Ajustes de posición para las secciones */
-#nosotros,
-#reviews {
-  position: relative;
-  z-index: 1;
-}
-
-body.dark-mode #nosotros {
-  background-color: rgb(250, 249, 247, 0.1);
-  place-content: center;
-  z-index: 1;
-}
-
-body.dark-mode #review {
-  background-color: rgb(250, 249, 247, 0.1);
-  place-content: center;
-  z-index: -1;
-}
-
-/* * *****   Fin Transition.style en About   ***** * */
-
-#icon-ws {
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
-}
-
-/* Servicios */
-/* Estilo para las cards de servicios */
-#servicios .card {
-  height: 100%; /* Asegura que todas las cards tengan la misma altura */
-  display: flex;
-  flex-direction: column;
-}
-
-#servicios .card-img-top {
-  height: 200px; /* Altura fija para todas las imágenes */
-  object-fit: cover; /* Mantiene la proporción de la imagen sin distorsión */
-  width: 100%;
-}
-
-#servicios .card-body {
-  flex: 1; /* Hace que el card-body ocupe el espacio restante */
-  display: flex;
-  flex-direction: column;
-  padding: 1.25rem; /* Padding consistente */
-}
-
-#servicios .card-title {
-  font-size: 1.25rem; /* Tamaño de fuente consistente */
-  margin-bottom: 1rem; /* Espacio consistente debajo del título */
-  min-height: 3rem; /* Altura mínima para títulos de dos líneas */
-  display: flex;
-  align-items: center; /* Centra verticalmente el texto */
-}
-
-#servicios .btn-tech {
-  margin-top: auto; /* Empuja el botón hacia abajo */
-}
-
-/* Asegura que todas las cards en la misma fila tengan la misma altura */
-#servicios .row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#servicios .col-md-4 {
-  display: flex;
-  margin-bottom: 1.5rem; /* Espacio consistente entre filas */
-}
-
-/* Fin Servicios */
 
 /* Contacto */
 input,
 textarea {
-  box-shadow:
-    inset 0 3px 6px rgba(0, 0, 0, 0.3),
-    0 3px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 /**/
@@ -584,76 +317,4 @@ footer {
   #nosotros-text {
     text-align: justify;
   }
-
-  /*  ***   nosotros   *** */
-  /* Margarita */
-  .margarita {
-    width: 200px; /* Ajusta el tamaño de la margarita */
-    height: 200px;
-  }
-
-  #margarita {
-    width: 300px; /* Ajusta el tamaño del contenedor */
-    height: 300px;
-  }
-
-  .centro {
-    width: 100px; /* Ajusta el tamaño del centro */
-    height: 100px;
-  }
-
-  .second-center {
-    width: 80px; /* Ajusta el tamaño del segundo centro */
-    height: 80px;
-  }
-
-  .arco {
-    width: 15px; /* Ajusta el tamaño del arco */
-    height: 4px;
-  }
-
-  .petal {
-    width: 25px; /* Ajusta el tamaño de los pétalos */
-    height: 25px;
-  }
-
-  /* Posiciones de los pétalos */
-  .petal1 {
-    top: 7%;
-    left: 43%;
-  }
-  .petal2 {
-    top: 17%;
-    left: 69%;
-    transform: rotate(45deg);
-  }
-  .petal3 {
-    top: 45%;
-    left: 80%;
-  }
-  .petal4 {
-    top: 70%;
-    left: 70%;
-    transform: rotate(45deg);
-  }
-  .petal5 {
-    top: 80%;
-    left: 43%;
-  }
-  .petal6 {
-    top: 70%;
-    left: 17%;
-    transform: rotate(45deg);
-  }
-  .petal7 {
-    top: 45%;
-    left: 8%;
-  }
-  .petal8 {
-    top: 17%;
-    left: 17%;
-    transform: rotate(45deg);
-  }
-
-  /* Fin Margarita */
 }

@@ -1,5 +1,3 @@
-<!-- npx prettier --version
- -->
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -9,23 +7,17 @@
     <title>TechFuture Software</title>
     <!-- Iconos RRSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <meta
-      name="description"
-      content="SFTI: Soluciones de software innovadoras para impulsar tu negocio. Descubre nuestros servicios personalizados."
-    />
-    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <!-- Bootstrap Correcto -->
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- Estilos personalizados -->
     <link href="public/css/styles.css?v=1.0" rel="stylesheet" />
   </head>
   <body>
@@ -40,8 +32,6 @@
             src="assets/images/logoTFS.webp"
             alt="Logo SFTI"
             loading="lazy"
-            width="80"
-            height="160"
           />
           <h4>TechFuture Software</h4>
         </a>
@@ -59,29 +49,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link text-white" href="#home-nav">
-                <h6>Inicio</h6>
-              </a>
+              <a class="nav-link text-white" href="#home-nav">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#nosotros">
-                <h6>Nosotros</h6>
-              </a>
+              <a class="nav-link text-white" href="#nosotros">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#servicios">
-                <h6>Servicios</h6>
-              </a>
+              <a class="nav-link text-white" href="#servicios">Servicios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#reviews">
-                <h6>Reviews</h6>
-              </a>
+              <a class="nav-link text-white" href="#reviews">Reviews</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#contacto">
-                <h6>Contacto</h6>
-              </a>
+              <a class="nav-link text-white" href="#contacto">Contacto</a>
             </li>
           </ul>
           <button
@@ -95,7 +75,7 @@
       </div>
     </nav>
 
-    <!-- Hero Carrusel automático de 6 imágenes  -->
+    <!-- Hero Carrusel automático de 6 imágenes -->
     <section class="container w-100" id="home">
       <div class="row d-flex align-items-center justify-content-center">
         <div class="col text-center">
@@ -109,19 +89,24 @@
           </div>
         </div>
         <div class="col text-overlay">
-          <h1>Soluciones de Software Innovadoras</h1>
-          <h2>Impulsando tu Negocio con Tecnología de Vanguardia</h2>
-          <a href="#contacto" class="btn btn-tech mt-3">Contáctanos</a>
+          <h1 data-aos="fade-up">Soluciones de Software Innovadoras</h1>
+          <h2 data-aos="fade-up" data-aos-delay="200">
+            Impulsando tu Negocio con Tecnología de Vanguardia
+          </h2>
+          <a
+            href="#contacto"
+            class="btn btn-tech mt-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            Contáctanos
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Nosotros -->
-    <section
-      id="nosotros"
-      class="py-1 bg-light hidden"
-      transition-style="in:circle:center"
-    >
+    <section id="nosotros" class="nosotros py-1 bg-light">
       <div class="container">
         <div class="row min-vh-100">
           <div
@@ -130,28 +115,13 @@
           >
             <div
               class="d-flex flex-column align-items-center justify-content-center"
-              id="margarita"
             >
-              <div
-                class="margarita d-flex align-items-center justify-content-center"
-              >
-                <div class="petal petal1"></div>
-                <div class="petal petal2"></div>
-                <div class="petal petal3"></div>
-                <div class="petal petal4"></div>
-                <div class="petal petal5"></div>
-                <div class="petal petal6"></div>
-                <div class="petal petal7"></div>
-                <div class="petal petal8"></div>
-
-                <div class="centro" id="centro">
-                  <div class="second-center" id="second-center">
-                    <div class="arco" id="arco"></div>
-                  </div>
-                </div>
-              </div>
-              <h1 class="texto text-white mt-3">TechFuture</h1>
-              <h2 class="texto text-white mt-1">Software</h2>
+              <img
+                src="assets/images/logoTFS.webp"
+                alt="Logo TechFuture"
+                class="img-fluid w-50"
+                loading="lazy"
+              />
             </div>
           </div>
           <div
@@ -159,7 +129,7 @@
             data-aos="fade-left"
           >
             <h2 class="mb-2">Sobre Nosotros</h2>
-            <p class="mb-2" id="nosotros-text">
+            <p class="mb-2 text-paragraph">
               TechFuture Software es una empresa líder en desarrollo de
               software, comprometida con la innovación y la excelencia. Nuestro
               equipo de expertos trabaja incansablemente para ofrecer soluciones
@@ -180,7 +150,7 @@
         <div class="row">
           <!-- Repetir este bloque 6 veces para los servicios -->
           <div class="col-md-4 mb-4" data-aos="fade-up">
-            <div class="card">
+            <div class="card card-service">
               <img
                 src="assets/images/design.webp"
                 class="card-img-top"
@@ -202,7 +172,7 @@
           <!-- Fin del bloque de servicio -->
           <!-- Repetir este bloque 6 veces para los servicios -->
           <div class="col-md-4 mb-4" data-aos="fade-up">
-            <div class="card">
+            <div class="card card-service">
               <img
                 src="assets/images/backend.webp"
                 class="card-img-top"
@@ -224,7 +194,7 @@
           <!-- Fin del bloque de servicio -->
           <!-- Repetir este bloque 6 veces para los servicios -->
           <div class="col-md-4 mb-4" data-aos="fade-up">
-            <div class="card">
+            <div class="card card-service">
               <img
                 src="assets/images/analisis.webp"
                 class="card-img-top"
@@ -246,7 +216,7 @@
           <!-- Fin del bloque de servicio -->
           <!-- Repetir este bloque 6 veces para los servicios -->
           <div class="col-md-4 mb-4" data-aos="fade-up">
-            <div class="card">
+            <div class="card card-service">
               <img
                 src="assets/images/testing.webp"
                 class="card-img-top"
@@ -268,7 +238,7 @@
           <!-- Fin del bloque de servicio -->
           <!-- Repetir este bloque 6 veces para los servicios -->
           <div class="col-md-4 mb-4" data-aos="fade-up">
-            <div class="card">
+            <div class="card card-service">
               <img
                 src="assets/images/proyecto.webp"
                 class="card-img-top"
@@ -290,7 +260,7 @@
           <!-- Fin del bloque de servicio -->
           <!-- Repetir este bloque 6 veces para los servicios -->
           <div class="col-md-4 mb-4" data-aos="fade-up">
-            <div class="card">
+            <div class="card card-service">
               <img
                 src="assets/images/clases.webp"
                 class="card-img-top"
@@ -361,7 +331,7 @@
     <!-- Reviews -->
     <section
       id="reviews"
-      class="py-1 bg-light hidden"
+      class="py-1 bg-light hidden reviews"
       transition-style="in:circle:center"
     >
       <div
@@ -476,11 +446,14 @@
             data-bs-target="#reviewsCarousel"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span
+              class="carousel-control-prev-icon text-dark"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden text-dark">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            class="carousel-control-next text-dark"
             type="button"
             data-bs-target="#reviewsCarousel"
             data-bs-slide="next"
@@ -498,18 +471,15 @@
     <!-- Contacto -->
     <section id="contacto" class="container py-1">
       <div class="row d-flex justify-content-center">
-        <!-- Formulario de contacto -->
         <div class="col-lg-8 col-md-10 col-12">
           <form id="contactForm">
             <div class="text-center mb-2">
               <h4 class="display-4 fw-bold mt-2" data-aos="fade-right">
                 Contáctame
               </h4>
-              <h4 class="" data-aos="fade-left">
-                ¡Me Encantaría Conocer tu Propuesta!
-              </h4>
+              <h4 data-aos="fade-left">¡Me Encantaría Conocer tu Propuesta!</h4>
             </div>
-            <div class="row g-3" data-aos="fade-right">
+            <div class="row g-3" data-aos="fade-up">
               <div class="col-12">
                 <div class="form-group">
                   <label for="inputName">Nombre y Apellido</label>
@@ -520,8 +490,6 @@
                     class="form-control"
                     placeholder="Ingrese su nombre"
                     required
-                    pattern="[A-Za-záéíóúñÑ ]+"
-                    oninput="validarNombreApellido(event)"
                   />
                 </div>
               </div>
@@ -547,7 +515,6 @@
                     name="telefono"
                     class="form-control"
                     required
-                    pattern="[0-9]{1,10}"
                     placeholder="Ingrese su teléfono"
                   />
                 </div>
@@ -588,15 +555,16 @@
               </div>
             </div>
           </form>
-          <!-- Fin Formulario de contacto -->
           <a
             href="#home-nav"
             class="btn btn-tech mt-3 btn-proyectos text-center"
-            >Ir al Inicio</a
           >
+            Ir al Inicio
+          </a>
         </div>
       </div>
     </section>
+
     <!-- Footer -->
     <footer class="mt-1 pb-2">
       <div class="container-fluid">
@@ -613,33 +581,35 @@
               </a>
               <p>Agregando Valor a tu Empresa.</p>
             </div>
-
             <ul class="list-unstyled d-flex">
               <li class="me-2">
                 <a
                   href="https://www.instagram.com/techfuturesoftware/"
                   class="text-icon"
-                  ><i class="ri-instagram-fill"></i
-                ></a>
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
               </li>
               <li class="me-2">
                 <a
                   href="https://www.facebook.com/profile.php?id=100046965497737"
                   class="text-icon"
-                  ><i class="ri-facebook-fill"></i
-                ></a>
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
               </li>
               <li class="me-2">
-                <a href="https://x.com/JosegalvisDip" class="text-icon"
-                  ><i class="ri-twitter-fill"></i
-                ></a>
+                <a href="https://x.com/JosegalvisDip" class="text-icon">
+                  <i class="fab fa-twitter"></i>
+                </a>
               </li>
               <li>
                 <a
                   href="https://www.linkedin.com/in/jos%C3%A9-luis-galvis-escobar-1344821a2/"
                   class="text-icon"
-                  ><i class="ri-linkedin-fill"></i
-                ></a>
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
               </li>
             </ul>
           </div>
@@ -674,120 +644,14 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <!-- GSAP Library and Plugins -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/Observer.min.js"></script>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="./public/js/main.js"></script>
     <script>
-      // Cierre del Menu Hamburguesa
-      document.addEventListener("DOMContentLoaded", () => {
-        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-        const navbarCollapse = document.querySelector("#navbarNav");
-        let bsCollapse;
-
-        if (navbarCollapse) {
-          bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-            toggle: false,
-          });
-        }
-
-        navLinks.forEach((link) => {
-          link.addEventListener("click", (e) => {
-            // Cierra el menú al hacer clic en cualquier enlace
-            if (bsCollapse) bsCollapse.hide();
-
-            // Obtiene el id del destino desde el href
-            const targetId = link.getAttribute("href");
-
-            // Espera a que el menú se cierre y luego hace scroll suave al destino
-            setTimeout(() => {
-              const targetElement = document.querySelector(targetId);
-              if (targetElement) {
-                targetElement.scrollIntoView({ behavior: "smooth" });
-              }
-            }, 250); // Ajusta el tiempo si es necesario
-          });
-        });
-      });
-
-      // Dark Mode
-      document.addEventListener("DOMContentLoaded", function () {
-        const toggleDarkMode = () => {
-          const body = document.body;
-          const navbar = document.querySelector(".navbar");
-          const toggleButton = document.getElementById("darkModeToggle");
-
-          const darkMode = localStorage.getItem("darkMode") === "enabled";
-          if (darkMode || body.classList.toggle("dark-mode")) {
-            navbar.classList.add("dark-mode");
-            toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-            localStorage.setItem("darkMode", "enabled");
-          } else {
-            navbar.classList.remove("dark-mode");
-            toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-            localStorage.setItem("darkMode", "disabled");
-          }
-        };
-
-        // Verificar el estado del modo oscuro en el localStorage
-        toggleDarkMode();
-
-        // Añadir evento al botón de modo oscuro
-        document
-          .getElementById("darkModeToggle")
-          .addEventListener("click", toggleDarkMode);
-      });
+      AOS.init();
     </script>
-
-    <!-- Incluir el script de EmailJS -->
-    <script
-      type="text/javascript"
-      src="https://cdn.emailjs.com/dist/email.min.js"
-    ></script>
-
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("ZFNa8J5Ckf-Cv-kv1");
-      })();
-    </script>
-
-    <!-- Configurar el envío del formulario -->
-    <script type="text/javascript">
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          const form = this; // Guardar referencia al formulario
-
-          emailjs.sendForm("service_hc1g5ck", "template_omfi5rs", this).then(
-            function () {
-              console.log("Mensaje Enviado con Éxito!");
-              alert("Mensaje Enviado con Éxito");
-
-              // Limpiar el formulario después de enviarlo con éxito
-              form.reset();
-            },
-            function (error) {
-              console.log("Error al Enviar el Mensaje", error);
-              alert("Error al Enviar el Mensaje");
-            }
-          );
-        });
-    </script>
-
-    <script src="/public/js/main.js"></script>
   </body>
 </html>
