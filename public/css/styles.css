@@ -1,6 +1,4 @@
-/* style.css */
-
-/* Global Styles */
+/* styles.css */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 body {
@@ -8,7 +6,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .btn {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
