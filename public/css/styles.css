@@ -217,32 +217,32 @@ body.dark-mode .carousel-control-next {
 }
 
 #slide-1 {
-  background-image: url("/assets/images/analisis.jpg");
+  background-image: url("/assets/images/analisis.webp");
 }
 
 #slide-2 {
   animation-delay: 6s; /*  6 segundos para cada imagen */
-  background-image: url("/assets/images/design.jpg");
+  background-image: url("/assets/images/design.webp");
 }
 
 #slide-3 {
   animation-delay: 12s;
-  background-image: url("/assets/images/backend.jpg");
+  background-image: url("/assets/images/backend.webp");
 }
 
 #slide-4 {
   animation-delay: 18s;
-  background-image: url("/assets/images/testing.jpg");
+  background-image: url("/assets/images/testing.webp");
 }
 
 #slide-5 {
   animation-delay: 24s;
-  background-image: url("/assets/images/proyecto.jpg");
+  background-image: url("/assets/images/proyecto.webp");
 }
 
 #slide-6 {
   animation-delay: 30s;
-  background-image: url("/assets/images/clases.jpg");
+  background-image: url("/assets/images/clases.webp");
 }
 
 /* Animación para cada imagen del carrusel */
