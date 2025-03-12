@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Aquí añades la meta descripción -->
+    <meta
+      name="description"
+      content="TechFuture Software ofrece soluciones innovadoras de desarrollo de software para empresas de todos los tamaños."
+    />
     <link rel="icon" type="image/png" href="assets/images/logoTFS.webp" />
     <title>TechFuture Software</title>
     <!-- Iconos RRSS -->
@@ -11,10 +16,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <!-- Bootstrap -->
+    <!-- Bootstrap 5 CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!-- Precargar la primera imagen crítica para mejorar LCP -->
+    <link rel="preload" as="image" href="/assets/images/analisis.webp" />
     <!-- AOS (Animate On Scroll) -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <!-- Estilos personalizados -->
@@ -31,7 +40,9 @@
           <img
             src="assets/images/logoTFS.webp"
             alt="Logo SFTI"
-            loading="lazy"
+            width="75"
+            height="50"
+            loading="eager"
           />
           <h4>TechFuture Software</h4>
         </a>
@@ -76,31 +87,115 @@
     </nav>
 
     <!-- Hero Carrusel automático de 6 imágenes -->
-    <section class="container w-100" id="home">
-      <div class="row d-flex align-items-center justify-content-center">
-        <div class="col text-center">
+    <section class="container px-0" id="home">
+      <div
+        class="row m-0 align-items-center justify-content-center position-relative"
+      >
+        <div class="col-12 p-0 text-center">
           <div class="slider-wrap">
-            <div class="single-slide" id="slide-1"></div>
-            <div class="single-slide" id="slide-2"></div>
-            <div class="single-slide" id="slide-3"></div>
-            <div class="single-slide" id="slide-4"></div>
-            <div class="single-slide" id="slide-5"></div>
-            <div class="single-slide" id="slide-6"></div>
+            <!-- Slide 1: Cargado inmediatamente para mejorar LCP -->
+            <div class="single-slide" id="slide-1">
+              <!-- Imagen principal con alta prioridad para LCP -->
+              <img
+                src="/assets/images/analisis.webp"
+                alt="Análisis de software"
+                fetchpriority="high"
+                class="img-fluid"
+              />
+            </div>
+
+            <!-- Slide 2: Cargado diferido -->
+            <div class="single-slide" id="slide-2">
+              <picture>
+                <!-- Versiones optimizadas para diferentes tamaños de pantalla -->
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/assets/images/design-small.webp"
+                />
+                <img
+                  src="/assets/images/design.webp"
+                  alt="Diseño de software"
+                  loading="lazy"
+                  class="img-fluid"
+                />
+              </picture>
+            </div>
+
+            <!-- Slide 3: Cargado diferido -->
+            <div class="single-slide" id="slide-3">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/assets/images/backend-small.webp"
+                />
+                <img
+                  src="/assets/images/backend.webp"
+                  alt="Desarrollo backend"
+                  loading="lazy"
+                  class="img-fluid"
+                />
+              </picture>
+            </div>
+
+            <!-- Slide 4: Cargado diferido -->
+            <div class="single-slide" id="slide-4">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/assets/images/testing-small.webp"
+                />
+                <img
+                  src="/assets/images/testing.webp"
+                  alt="Testing de software"
+                  loading="lazy"
+                  class="img-fluid"
+                />
+              </picture>
+            </div>
+
+            <!-- Slide 5: Cargado diferido -->
+            <div class="single-slide" id="slide-5">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/assets/images/proyecto-small.webp"
+                />
+                <img
+                  src="/assets/images/proyecto.webp"
+                  alt="Gestión de proyectos"
+                  loading="lazy"
+                  class="img-fluid"
+                />
+              </picture>
+            </div>
+
+            <!-- Slide 6: Cargado diferido -->
+            <div class="single-slide" id="slide-6">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/assets/images/clases-small.webp"
+                />
+                <img
+                  src="/assets/images/clases.webp"
+                  alt="Clases y formación"
+                  loading="lazy"
+                  class="img-fluid"
+                />
+              </picture>
+            </div>
           </div>
         </div>
-        <div class="col text-overlay">
-          <h1 data-aos="fade-up">Soluciones de Software Innovadoras</h1>
-          <h2 data-aos="fade-up" data-aos-delay="200">
+
+        <!-- Texto superpuesto -->
+        <div class="col-md-6 text-overlay">
+          <h1 class="display-4 fw-bold">Soluciones de Software Innovadoras</h1>
+          <h2 class="fs-2">
             Impulsando tu Negocio con Tecnología de Vanguardia
           </h2>
-          <a
-            href="#contacto"
-            class="btn btn-tech mt-3"
-            data-aos="fade-up"
-            data-aos-delay="400"
+          <a href="#contacto" class="btn btn-tech px-4 py-2 mt-3"
+            >Contáctanos</a
           >
-            Contáctanos
-          </a>
         </div>
       </div>
     </section>
@@ -623,6 +718,7 @@
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa de ubicación de TechFuture Software"
             ></iframe>
           </div>
           <div class="col-md-4">

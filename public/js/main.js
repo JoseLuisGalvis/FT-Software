@@ -1,5 +1,23 @@
 // js/main.js
 
+// === Dark Mode ===
+const toggleDarkMode = () => {
+  const body = document.body;
+  const navbar = document.querySelector(".navbar");
+  const toggleButton = document.getElementById("darkModeToggle");
+  const darkMode = localStorage.getItem("darkMode") === "enabled";
+
+  if (darkMode) {
+    body.classList.add("dark-mode");
+    navbar.classList.add("dark-mode");
+    toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
+  } else {
+    body.classList.remove("dark-mode");
+    navbar.classList.remove("dark-mode");
+    toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+  }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("contextmenu", (event) => event.preventDefault());
 
@@ -26,24 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 250);
     });
   });
-
-  // === Dark Mode ===
-  const toggleDarkMode = () => {
-    const body = document.body;
-    const navbar = document.querySelector(".navbar");
-    const toggleButton = document.getElementById("darkModeToggle");
-    const darkMode = localStorage.getItem("darkMode") === "enabled";
-
-    if (darkMode) {
-      body.classList.add("dark-mode");
-      navbar.classList.add("dark-mode");
-      toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-    } else {
-      body.classList.remove("dark-mode");
-      navbar.classList.remove("dark-mode");
-      toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-  };
 
   toggleDarkMode(); // Aplicar al cargar
   document.getElementById("darkModeToggle").addEventListener("click", () => {
